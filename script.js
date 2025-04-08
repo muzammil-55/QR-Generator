@@ -10,3 +10,10 @@ function generateQR() {
   const apiURL = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(input)}&size=200x200`;
   qrImage.src = apiURL;
 }
+
+// the below is used to keyboard enter key
+document.getElementById("qrInput").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    generateQR();
+  }
+});
