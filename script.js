@@ -1,0 +1,12 @@
+function generateQR() {
+  const input = document.getElementById("qrInput").value.trim();
+  const qrImage = document.getElementById("qrImage");
+
+  if (input === "") {
+    alert("Please enter some text or URL.");
+    return;
+  }
+
+  const apiURL = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(input)}&size=200x200`;
+  qrImage.src = apiURL;
+}
